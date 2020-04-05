@@ -3,7 +3,7 @@ import numpy as np
 
 
 class Plane:
-    def __init__(self, Cd_0, Em, e_w, chord, span, Cl_max, Lam, tc_max, W_0, W_fuel, cj, T_a_sl, atmosphere):
+    def __init__(self, Cd_0, Em, e_w, chord, span, Cl_max, Lam, tc_max, W_0, W_1, cj, T_a_sl, atmosphere):
         # design parameters
         self.Cd_0 = Cd_0        # Profile drag coefficient
         self.Em = Em            # Max Lift-to-Drag ratio
@@ -14,7 +14,7 @@ class Plane:
         self.Lam = Lam          # Wing sweep angle [degrees]
         self.tc_max = tc_max    # Max t/c
         self.W_0 = W_0          # Weight at takeoff [N]
-        self.W_fuel = W_fuel    # Weight of fuel [N]
+        self.W_1 = W_1          # Weight without fuel [N]
         self.cj = cj            # Specific fuel consumption [N-fuel/N-thrust/hr]
         self.T_a_sl = T_a_sl    # Maximum thrust at sea level [N]
         # computed

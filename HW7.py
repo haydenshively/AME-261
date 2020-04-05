@@ -10,13 +10,13 @@ if __name__ == '__main__':
         Cd_0=0.020,
         Em=None,
         e_w=0.93,
-        chord=423 / 61,
+        chord=423 / 61,# MAC
         span=61,
         Cl_max=2.3,
         Lam=31.6,
         tc_max=0.13,
         W_0=2380000,
-        W_fuel=None,
+        W_1=None,
         cj=None,
         T_a_sl=342000*2,
         atmosphere=std_atm_earth()
