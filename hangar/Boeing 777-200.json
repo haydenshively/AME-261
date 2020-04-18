@@ -1,0 +1,19 @@
+{
+  "description": "commercial airliner",
+  "cost": 330000000,
+  "engine": {
+    "name": "Rolls Royce Trent 800"
+  },
+  "engine_count": 2,
+  "weight": {
+    "struct": 711766,
+    "fuel": 900000
+  },
+  "Cd_0": 0.020,
+  "e_w": 0.93,
+  "S": 423,
+  "b": 61,
+  "Cl_max": 2.3,
+  "Lam": 31.6,
+  "tc_max": 0.13
+}

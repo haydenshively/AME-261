@@ -1,10 +1,13 @@
+import sys
+sys.path.append('..')
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 
 if __name__ == '__main__':
-    from atmosphere import std_atm_earth
-    from plane import Plane
+    from haydens_code.atmosphere import std_atm_earth
+    from haydens_code.plane import Plane
 
     # Initialize Cessna CJ-1 plane object
     # plane = Plane(
@@ -27,7 +30,7 @@ if __name__ == '__main__':
     plane = Plane(
         Cd_0=0.018,
         Em=None,
-        e_w=0.85,
+        e=0.85,
         chord=339 / 51.8,
         span=51.8,
         Cl_max=1.4,

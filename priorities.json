@@ -1,0 +1,9 @@
+{
+  "minimize_cost": 0.5,
+  "maximize_V_cruise": 0.5,
+  "maximize_payload": 0.0,
+  "maximize_range": 0.0,
+  "minimize_runway_length": 0.0,
+  "minimize_pattern_radius": 0.0,
+  "maximize_efficiency": 0.5
+}

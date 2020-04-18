@@ -1,0 +1,18 @@
+{
+  "description": "the best ever passenger BWB",
+  "weight": {
+    "struct": 357064,
+    "fuel": 268320
+  },
+  "engine": {
+    "name": "GEnx-2B67B"
+  },
+  "engine_count": 3,
+  "Cd_0": 0.011,
+  "e_w": 0.92,
+  "S": 632.1,
+  "b": 70,
+  "Cl_max": 1.7,
+  "Lam": 56.13,
+  "tc_max": 0.187
+}

@@ -1,0 +1,24 @@
+{
+  "occupant": {
+    "weight": 889,
+    "baggage_weight": 133.36
+  },
+  "occupant_count": 410,
+  "range": 6482000,
+  "takeoff": {
+    "obstacle": 10.668,
+    "balanced": true
+  },
+  "landing": {
+    "approach_speed": 74.59
+  },
+  "runway_coeffs": {
+    "asphalt": {
+      "dry": 0.02
+    },
+    "concrete": {
+      "dry": 0.02
+    }
+  },
+  "runway_length": 2743.2
+}

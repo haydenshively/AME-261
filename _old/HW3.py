@@ -1,6 +1,9 @@
+import sys
+sys.path.append('..')
+
 if __name__ == '__main__':
-    from atmosphere import std_atm_earth
-    from plane import Plane
+    from haydens_code.atmosphere import std_atm_earth
+    from haydens_code.plane import Plane
 
     # Initialize atmosphere object
     atm = std_atm_earth()
@@ -15,19 +18,20 @@ if __name__ == '__main__':
     drag_210 = []
 
     for i in range(0, 20001, 500):
+        plane.set_altitude(i)
         altitudes.append(i)
         density = atm.density_at(i)
 
-        speed_stall.append(plane.speed_stall(density))
+        speed_stall.append(plane.speed_stall())
 
-        speed = plane.speed(plane.Cl_min_drag, density)
+        speed = plane.speed(plane.Cl_min_drag)
         speed_const_Cl.append(speed)
         Cd_min = plane.Cd(plane.Cd_i(plane.Cl_min_drag))
-        drag_const_Cl.append(plane.drag(Cd_min, density, speed))
+        drag_const_Cl.append(plane.drag(Cd_min, speed))
 
         speed = 210  # m/s
-        Cd = plane.Cd(plane.Cd_i(plane.Cl(density, speed)))
-        drag_210.append(plane.drag(Cd, density, speed))
+        Cd = plane.Cd(plane.Cd_i(plane.Cl(speed)))
+        drag_210.append(plane.drag(Cd, speed))
 
     # Reformat as Strings
     alt_str = ['%d' % i for i in altitudes]

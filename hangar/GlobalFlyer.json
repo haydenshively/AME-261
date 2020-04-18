@@ -1,0 +1,18 @@
+{
+  "description": "world record holder",
+  "cost": 1500000,
+  "engine": {
+    "thrust": 10200,
+    "cj": 0.42
+  },
+  "engine_count": 1,
+  "weight": {
+    "struct": 14900,
+    "fuel": 83100
+  },
+  "Cd_0": 0.016,
+  "e_w": 0.94,
+  "S": 37.2,
+  "b": 34.8,
+  "Cl_max": 1.2
+}

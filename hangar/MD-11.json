@@ -1,0 +1,23 @@
+{
+  "description": "commercial airliner",
+  "cost": 160000000,
+  "engine": {
+    "name": "PW4000-100",
+    "thrust": 267000,
+    "weight": 43806,
+    "cj": 0.307
+  },
+  "engine_count": 3,
+  "weight": {
+    "struct": 1005382,
+    "fuel": 1150000,
+    "payload": 516000
+  },
+  "Cd_0": 0.018,
+  "e_w": 0.85,
+  "S": 339,
+  "b": 51.8,
+  "Cl_max": 1.4,
+  "Lam": 35,
+  "tc_max": 0.12
+}

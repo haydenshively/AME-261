@@ -1,15 +1,18 @@
+import sys
+sys.path.append('..')
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
-    from atmosphere import std_atm_earth
-    from plane import Plane
+    from haydens_code.atmosphere import std_atm_earth
+    from haydens_code.plane import Plane
 
     # Initialize Boeing 777-200 plane object
     plane = Plane(
         Cd_0=0.020,
         Em=None,
-        e_w=0.93,
+        e=0.93,
         chord=423 / 61,# MAC
         span=61,
         Cl_max=2.3,

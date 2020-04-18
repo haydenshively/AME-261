@@ -1,0 +1,22 @@
+{
+  "description": "commercial airliner",
+  "cost": 60000000,
+  "engine": {
+    "name": "PWJT8D",
+    "thrust": 64000,
+    "weight": 21070,
+    "cj": 0.51
+  },
+  "engine_count": 2,
+  "weight": {
+    "struct": 356000,
+    "fuel": 89000
+  },
+  "Cd_0": 0.0195,
+  "e_w": 0.83,
+  "S": 112,
+  "b": 32.9,
+  "Cl_max": 1.4,
+  "Lam": 26.0,
+  "tc_max": 0.11
+}

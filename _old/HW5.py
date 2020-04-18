@@ -1,6 +1,9 @@
+import sys
+sys.path.append('..')
+
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.font_manager import FontProperties
+
 
 def QUESTION_2():
     altitudes = []
@@ -121,8 +124,8 @@ def QUESTION_3():
     plt.show()
 
 if __name__ == '__main__':
-    from atmosphere import std_atm_earth
-    from plane import Plane
+    from haydens_code.atmosphere import std_atm_earth
+    from haydens_code.plane import Plane
 
     # Initialize atmosphere object
     atm = std_atm_earth()

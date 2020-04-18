@@ -1,0 +1,21 @@
+{
+  "description": "close air support, combat search and rescue",
+  "cost": 18800000,
+  "engine": {
+    "name": "TF34-GE-100",
+    "thrust": 40296,
+    "weight": 6419,
+    "cj": 0.371
+  },
+  "engine_count": 2,
+  "weight": {
+    "struct": 116071,
+    "fuel": 48892,
+    "payload": 71119
+  },
+  "Cd_0": 0.032,
+  "e_w": 0.87,
+  "S": 47.1,
+  "b": 17.42,
+  "Cl_max": 1.2
+}

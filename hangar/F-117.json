@@ -1,0 +1,22 @@
+{
+  "description": "combat",
+  "cost": 45000000,
+  "engine": {
+    "name": "GE F404-F1D2",
+    "thrust": 48900,
+    "weight": 10143,
+    "cj": 0.81
+  },
+  "engine_count": 2,
+  "weight": {
+    "struct": 110838,
+    "fuel": 80908,
+    "payload": 22226
+  },
+  "Cd_0": 0.042,
+  "e_w": 0.84,
+  "S": 84.8,
+  "b": 13.2,
+  "Cl_max": 1.2,
+  "Lam": 67
+}

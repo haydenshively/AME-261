@@ -1,23 +1,9 @@
+import sys
+sys.path.append('..')
+
 if __name__ == '__main__':
-    from atmosphere import Atmosphere
-
-    """
-    Define the different regions of the standard atmosphere
-    """
-    regions = [
-        (0, -0.0065),
-        (11000, 0),
-        (25000, 0.003)
-    ]  # altitude, lapse rate
-    """
-    Define constants at sea level
-    """
-    t_sl = 288.16  # K
-    p_sl = 101325  # Pa
-    rho_sl = 1.2250  # kg/m^3
-
-    # Initialize atmosphere object
-    atm = Atmosphere(regions, t_sl, p_sl, rho_sl)
+    from haydens_code.atmosphere import std_atm_earth
+    atm = std_atm_earth()
 
     # Generate data at requested altitudes
     altitudes = []

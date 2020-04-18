@@ -1,5 +1,5 @@
-from regions.isothermal import Isothermal
-from regions.gradient import Gradient
+from .regions.isothermal import Isothermal
+from .regions.gradient import Gradient
 
 
 def region_type(lapse_rate):

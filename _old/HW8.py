@@ -1,15 +1,15 @@
-import numpy as np
-import matplotlib.pyplot as plt
+import sys
+sys.path.append('..')
 
 if __name__ == '__main__':
-    from atmosphere import std_atm_earth
-    from plane import Plane
+    from haydens_code.atmosphere import std_atm_earth
+    from haydens_code.plane import Plane
 
     # Initialize The Global Flyer plane object
     plane = Plane(
         Cd_0=0.016,
         Em=None,
-        e_w=0.94,
+        e=0.94,
         chord=37.2 / 34.8,# MAC
         span=34.8,
         Cl_max=1.2,

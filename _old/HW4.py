@@ -1,6 +1,9 @@
+import sys
+sys.path.append('..')
+
 if __name__ == '__main__':
-    from atmosphere import std_atm_earth
-    from plane import Plane
+    from haydens_code.atmosphere import std_atm_earth
+    from haydens_code.plane import Plane
 
     # Initialize atmosphere object
     atm = std_atm_earth()
@@ -9,8 +12,9 @@ if __name__ == '__main__':
 
     """QUESTION 1 - PART A"""
     altitude = 11500  # m
+    plane.set_altitude(altitude)
     density = atm.density_at(altitude)
-    thrust_avail = plane.jet_thrust_available(density, 1.2250)
+    thrust_avail = plane.jet_thrust_available()
 
     # Generate data at requested velocities
     speeds = []
@@ -19,9 +23,9 @@ if __name__ == '__main__':
     drags = []
 
     for speed in range(20, 301, 5):
-        Cl = plane.Cl(density, speed)
-        Cd = plane.Cd(plane.Cd_i(plane.Cl(density, speed)))
-        drag = plane.drag(Cd, density, speed)
+        Cl = plane.Cl(speed)
+        Cd = plane.Cd(plane.Cd_i(plane.Cl(speed)))
+        drag = plane.drag(Cd, speed)
 
         speeds.append(speed)
         lift_coeffs.append(Cl)
@@ -82,7 +86,7 @@ if __name__ == '__main__':
     Cl_min_drag = plane.Cl_min_drag
     Cd_i_min = plane.Cd_i(Cl_min_drag)
     Cd_min = plane.Cd(Cd_i_min)
-    D_min = plane.drag(Cd_min, density, plane.speed(Cl_min_drag, density))
+    D_min = plane.drag(Cd_min, density, plane.speed(Cl_min_drag))
     print("Minimum Drag @ 500 m: {}".format(D_min))
     print("T_a/D_min: {}".format(thrust_avail/D_min))
 
@@ -94,19 +98,19 @@ if __name__ == '__main__':
         altitudes.append(i)
         density = atm.density_at(i)
 
-        speed = plane.speed(plane.Cl_min_drag, density)
+        speed = plane.speed(plane.Cl_min_drag)
         Cd_min = plane.Cd(plane.Cd_i(plane.Cl_min_drag))
-        drag_min = plane.drag(Cd_min, density, speed)
+        drag_min = plane.drag(Cd_min, speed)
 
-        thrust_avail = plane.jet_thrust_available(density, 1.2250)
+        thrust_avail = plane.jet_thrust_available()
 
         thrust_drag_ratio = thrust_avail/drag_min
         T_a_Drag_min_Ratios.append(thrust_drag_ratio)
 
-        speed_stall = plane.speed_stall(density)
-        Cl_stall = plane.Cl(density, speed_stall)
+        speed_stall = plane.speed_stall()
+        Cl_stall = plane.Cl(speed_stall)
         Cd_stall = plane.Cd(plane.Cd_i(Cl_stall))
-        stall_drags.append(plane.drag(Cd_stall, density, speed_stall))
+        stall_drags.append(plane.drag(Cd_stall, speed_stall))
 
     plt.cla()
     plt.clf()

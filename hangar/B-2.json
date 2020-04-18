@@ -1,0 +1,20 @@
+{
+  "description": "multi-role heavy bomber",
+  "cost": 1157000000,
+  "engine": {
+    "name": "F118-GE-100",
+    "thrust": 76902,
+    "weight": 14700
+  },
+  "engine_count": 4,
+  "weight": {
+    "struct": 652435,
+    "fuel": 742350,
+    "payload": 177811
+  },
+  "Cd_0": 0.0090,
+  "e_w": 0.92,
+  "S": 476,
+  "b": 52.4,
+  "Cl_max": 1.22
+}
