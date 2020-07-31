@@ -68,9 +68,9 @@ if __name__ == '__main__':
 
                 cost = experiment._cost_engines + experiment._cost_struct
 
-                # assume we're cruising at 10km
+                # assume we're cruising at 12.5km
                 # also assume that the Carson speed is within our V profile
-                experiment.set_altitude(14000)
+                experiment.set_altitude(12500)
                 V_cruise = experiment.speed_carson()
                 # solve for max payload, and run the rest of the
                 # calculations assuming the plane is 100% full
@@ -123,7 +123,7 @@ if __name__ == '__main__':
                     V_approach < required_V_approach
                 ]
                 # Uncomment this line to keep engine in the race even though it doesn't meet requirements
-                if sum(reqs_met) < len(reqs_met): continue
+                # if sum(reqs_met) < len(reqs_met): continue
                 result_reqs_met.append(reqs_met)
                 # Save results to judge based on priorities later on
                 results.append([
@@ -138,6 +138,7 @@ if __name__ == '__main__':
                 result_names.append(plane_name + '_' + eng_name + '_{}'.format(i))
 
         if len(results) > 0:
+            print(len(results))
             # convert to numpy and make everything dimensionless
             results_np = np.array(results)
             results_np /= results_np.max(axis=0)
@@ -176,6 +177,20 @@ if __name__ == '__main__':
                     print('      Sufficient Range: {}'.format(result_reqs_met[i][1]))
                     print('      Satisfactory Runway: {}'.format(result_reqs_met[i][2]))
                     print('      Satisfactory Approach: {}'.format(result_reqs_met[i][3]))
+
+            from mpl_toolkits.mplot3d import Axes3D
+            from matplotlib import pyplot as plt
+            fig = plt.figure()
+            ax = fig.add_subplot(111, projection='3d')
+            ax.scatter(results_np[:,0], results_np[:,1], results_np[:,6])
+            for i, txt in enumerate(result_names):
+                ax.text(results_np[i,0], results_np[i,1], results_np[i,6], txt[len(plane_name)+1:], 'z', color='green')
+            ax.set_title('Visualizing the Engine Selection Function')
+            ax.set_xlabel('Relative Cost Coefficient')
+            ax.set_ylabel('Relative Range Coefficient')
+            ax.set_zlabel('Relative Efficiency Coefficient')
+            plt.show()
+
         else:
             print(plane_name + ' cannot meet requirements, regardless of engine')
         print('')

@@ -14,10 +14,12 @@
   },
   "runway_coeffs": {
     "asphalt": {
-      "dry": 0.02
+      "dry": 0.02,
+      "wet": 0.01
     },
     "concrete": {
-      "dry": 0.02
+      "dry": 0.02,
+      "wet": 0.01
     }
   },
   "runway_length": 2743.2

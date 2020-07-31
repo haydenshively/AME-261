@@ -31,7 +31,6 @@ def _load(path, atmosphere=std_atm_earth()):
 
     plane = Plane(
         data.get('Cd_0', None),
-        data.get('Em', None),
         data.get('e_w', None),
         data.get('S', None),
         data.get('b', None),
