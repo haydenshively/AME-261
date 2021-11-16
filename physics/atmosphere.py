@@ -54,6 +54,13 @@ class Atmosphere:
         t = self.temperature_at(altitude)
         return (1.4 * 287 * t)**0.5
 
+    def knudsen_number_at(self, altitude, A=1.26):
+        mu = self.viscosity_coeff_at(altitude)
+        rho = self.density_at(altitude)
+        t = self.temperature_at(altitude)
+
+        return A * mu / (rho * (287 * t) ** 0.5)
+
 
 def std_atm_earth():
     """

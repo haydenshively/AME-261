@@ -2,7 +2,7 @@ import sys
 sys.path.append('..')
 
 if __name__ == '__main__':
-    from haydens_code.atmosphere import std_atm_earth
+    from physics.atmosphere import std_atm_earth
     atm = std_atm_earth()
 
     # Generate data at requested altitudes
